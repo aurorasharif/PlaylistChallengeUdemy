@@ -82,11 +82,15 @@ public class Main {
                     break;
             }
         }
-
     }
 
     private static void deleteSong(ListIterator iterator) {
         iterator.remove();
+        if (iterator.hasNext()){
+            iterator.next();
+        }else if (iterator.hasPrevious()){
+            iterator.previous();
+        }
     }
 
     private static void listSongs(LinkedList<Song> playList) {
