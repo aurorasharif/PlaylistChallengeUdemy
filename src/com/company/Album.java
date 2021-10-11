@@ -46,14 +46,14 @@ public class Album {
         } return false;
     }
 
-    public class SongList{
+    private class SongList{
         private List<Song> songList;
 
         public SongList() {
             this.songList = new ArrayList<Song>();
         }
 
-        public boolean addSong(String songTitle, double duration){
+        private boolean addSong(String songTitle, double duration){
             Song found=findSong(songTitle);
             if (found==null){
                 Song songToAdd=new Song(songTitle,duration);
@@ -63,7 +63,7 @@ public class Album {
             return false;
         }
 
-        public Song findSong(String songTitle){
+        private Song findSong(String songTitle){
             Song song=null;
             for (int i = 0; i< songList.size(); i++){
                 if (songList.get(i).getTitle().equals(songTitle)){
@@ -72,7 +72,7 @@ public class Album {
             } return song;
         }
 
-        public int getNumberOfSongs(){
+        private int getNumberOfSongs(){
            return songList.size();
         }
     }
